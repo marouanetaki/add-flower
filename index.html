@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>A Question for Dr. Houda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <div id="question-container" class="glass-card animate-in" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+        <h1 id="question-text">Doctor Houda, would you do me the honor of going out with me?</h1>
+        <div class="button-container">
+            <button id="yes-btn">Yes, I'd love to.</button>
+            <button id="no-btn">No</button>
+        </div>
+    </div>
+
+    <div id="success-container" class="hidden glass-card" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+        <div class="bouquet-container">
+            <div class="flower f1">🌿</div>
+            <div class="flower f2">🌸</div>
+            <div class="flower f3">✨</div>
+            <div class="flower f4">🌼</div>
+            <div class="flower f5">🦋</div>
+        </div>
+        <h1 id="success-message"></h1>
+        <p class="sub-message fadeIn">I can't wait.</p>
+        
+        <a href="https://instagram.com/maroetk" id="instagram-btn" class="hidden-btn fadeInBtn" target="_blank">Text me on Instagram ✨</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

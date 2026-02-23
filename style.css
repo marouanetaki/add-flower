@@ -1,0 +1,99 @@
+* {
+    margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent;
+}
+body {
+    font-family: 'Montserrat', sans-serif; min-height: 100vh; display: flex;
+    justify-content: center; align-items: center; overflow: hidden; position: relative;
+    background: url('https://images.unsplash.com/photo-1508610048659-a06b669e3321?q=80&w=1935&auto=format&fit=crop') no-repeat center center/cover;
+}
+.overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 20, 40, 0.6); z-index: 1;
+}
+.glass-card {
+    background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 24px; padding: 50px 30px;
+    width: 85%; max-width: 450px; text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); z-index: 10;
+    transition: opacity 0.8s ease, transform 0.8s ease; 
+}
+.animate-in { animation: slideUpFade 1s ease-out forwards; }
+@keyframes slideUpFade { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+
+h1 {
+    font-family: 'Cinzel Decorative', cursive; color: #ffffff; font-size: 26px;
+    margin-bottom: 40px; line-height: 1.5; min-height: 90px;
+    display: flex; align-items: center; justify-content: center; text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.button-container { display: flex; flex-direction: column; gap: 20px; align-items: center; width: 100%; }
+
+button {
+    border: none; border-radius: 8px; font-family: 'Montserrat', sans-serif;
+    font-size: 16px; font-weight: 600; letter-spacing: 1px; cursor: pointer;
+    transition: all 0.3s ease; width: 100%; padding: 18px; text-transform: uppercase;
+}
+#yes-btn {
+    background: linear-gradient(135deg, #005c6e 0%, #00838f 100%); color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 92, 110, 0.4); border: 1px solid rgba(255, 215, 0, 0.3); z-index: 20;
+}
+#no-btn {
+    background: transparent; color: #ddd; border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 🏃‍♂️ The magical class making the No button run away */
+.runaway {
+    position: fixed !important; z-index: 1000;
+    transition: top 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), left 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Success Screen */
+.hidden { display: none !important; }
+#success-message { color: #d4af37; font-size: 28px; margin-top: 25px; min-height: 80px; }
+.sub-message { color: #eee; font-weight: 400; opacity: 0; letter-spacing: 2px; }
+
+/* WhatsApp Button */
+#whatsapp-btn {
+    display: inline-block; margin-top: 30px; padding: 15px 30px;
+    background: transparent; border: 1px solid #d4af37; color: #d4af37;
+    border-radius: 50px; text-decoration: none; font-weight: 600; opacity: 0;
+    transition: background 0.3s, color 0.3s; pointer-events: auto;
+}
+#whatsapp-btn:hover { background: #d4af37; color: #002028; }
+
+.fadeIn { animation: fadeInAnim 2s forwards; animation-delay: 2.5s; }
+.fadeInBtn { animation: fadeInAnim 2s forwards; animation-delay: 4.5s; }
+@keyframes fadeInAnim { to { opacity: 1; } }
+
+/* Bouquet & Particles */
+.bouquet-container {
+    position: relative; height: 120px; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;
+}
+.flower {
+    position: absolute; font-size: 50px; opacity: 0; filter: drop-shadow(0 5px 5px rgba(0,0,0,0.3));
+    animation: elegantBloom 1.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.f1 { animation-delay: 0.2s; transform-origin: bottom center; font-size: 70px;}
+.f2 { animation-delay: 0.4s; margin-left: -60px; margin-top: 20px; }
+.f3 { animation-delay: 0.6s; margin-top: -70px; font-size: 40px; }
+.f4 { animation-delay: 0.8s; font-size: 60px; z-index: 5; }
+.f5 { animation-delay: 1.0s; margin-right: -60px; margin-top: 20px; }
+@keyframes elegantBloom {
+    from { opacity: 0; transform: scale(0) translateY(30px) rotate(-10deg); }
+    to { opacity: 1; transform: scale(1) translateY(0) rotate(0deg); }
+}
+
+.particle { position: absolute; pointer-events: none; z-index: 50; animation: driftDown linear forwards; }
+@keyframes driftDown {
+    0% { transform: translateY(-10vh) translateX(-20px) rotate(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(110vh) translateX(20px) rotate(360deg); opacity: 0; }
+}
+
+/* Instagram Button */
+#instagram-btn {
+    display: inline-block; margin-top: 30px; padding: 15px 30px;
+    background: transparent; border: 1px solid #d4af37; color: #d4af37;
+    border-radius: 50px; text-decoration: none; font-weight: 600; opacity: 0;
+    transition: background 0.3s, color 0.3s; pointer-events: auto;
+}
+#instagram-btn:hover { background: #d4af37; color: #002028; }
